@@ -1,0 +1,69 @@
+/* General Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+body { background: #0f172a; color: white; scroll-behavior: smooth; }
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: rgba(15, 23, 42, 0.9);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-links { display: flex; list-style: none; align-items: center; gap: 20px; }
+.nav-links a { color: white; text-decoration: none; font-weight: 500; }
+
+.cv-btn {
+    background: #38bdf8;
+    color: #0f172a !important;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Hero Section with Tech Background */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1920');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 { font-size: 3.5rem; margin-bottom: 10px; }
+
+/* Responsive Project Grid */
+.projects { padding: 80px 5%; }
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+h2{
+ position:center;
+
+
+}
+
+.project-card {
+    background: #1e293b;
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid #334155;
+    text-align: center;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* Add JS toggle for mobile */
+    .hero h1 { font-size: 2.5rem; }
+}
