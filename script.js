@@ -1,19 +1,26 @@
-const menuToggle = document.getElementById('mobile-menu');
-const navLinks = document.querySelector('.nav-links');
+document.addEventListener("DOMContentLoaded", () => {
+    const accordionHeaders = document.querySelectorAll(".accordion-header");
 
-menuToggle.addEventListener('click', () => {
-    // This adds/removes a class to show the menu on mobile
-    navLinks.classList.toggle('active');
-    
-    // Quick style fix for mobile toggle
-    if(navLinks.classList.contains('active')) {
-        navLinks.style.display = 'flex';
-        navLinks.style.flexDirection = 'column';
-        navLinks.style.position = 'absolute';
-        navLinks.style.top = '60px';
-        navLinks.style.width = '100%';
-        navLinks.style.background = '#0f172a';
-    } else {
-        navLinks.style.display = 'none';
-    }
+    accordionHeaders.forEach(header => {
+        header.addEventListener("click", function() {
+            const item = this.parentElement;
+            const content = this.nextElementSibling;
+
+            // Check if current item is already active
+            const isActive = item.classList.contains("active");
+
+            // Close all active accordion items first (optional: omit if you want multiple open)
+            document.querySelectorAll(".accordion-item").forEach(el => {
+                el.classList.remove("active");
+                el.querySelector(".accordion-content").style.maxHeight = null;
+            });
+
+            // If the clicked item wasn't active, open it
+            if (!isActive) {
+                item.classList.add("active");
+                // Dynamically sets smooth transition height using its scroll height
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+    });
 });
