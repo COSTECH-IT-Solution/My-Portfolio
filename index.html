@@ -3,39 +3,261 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Tech Portfolio</title>
+    <title>Tech Portfolio | Web Dev & IT Specialist</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo">DevPort</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="resume.pdf" download class="cv-btn">Download CV</a></li>
-        </ul>
-        <div class="menu-toggle" id="mobile-menu">
-            <span></span><span></span><span></span>
+    <header>
+        <div class="navbar container">
+            <div class="logo">COSTECH  <span>IT Solution</span></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Building the Future</h1>
-            <p>Full Stack Developer | Tech Enthusiast</p>
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Hi, I'm a <span class="highlight">Full-Stack Developer</span> & <span class="highlight">IT Specialist</span></h1>
+            <p>Bridging the gap between robust software engineering, scalable cloud infrastructure, and hands-on hardware systems engineering.</p>
+            <a href="#contact" class="btn">Get In Touch</a>
         </div>
     </section>
 
-    <section id="projects" class="projects">
-        <h2>My Projects</h2>
-        <div class="project-grid">
-            <div class="project-card">Project 1</div>
-            <div class="project-card">Project 2</div>
-            <div class="project-card">Project 3</div>
+    <section id="about" class="about container">
+        <h2>About Me</h2>
+        <p>I am a versatile tech professional specializing in full-stack web application development and hardware/software systems lifecycle management. Whether it's optimization of databases, deploying cloud infrastructure, diagnosing complex hardware faults, or programming autonomous robotic systems, I deliver tailored, high-performance tech solutions.</p>
+    </section>
+
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2>Technical Competencies</h2>
+            <p class="subtitle">Click on a category to expand and view specific skills.</p>
+
+            <div class="accordion-container">
+                
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span><i class="fa-solid fa-code icon"></i> Front-End Development</span>
+                        <i class="fa-solid fa-chevron-down arrow"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Building responsive, accessible, and dynamic user interfaces using modern web standards.</p>
+                        <ul>
+                            <li><strong>HTML5 & CSS3:</strong> Semantic structure, Flexbox, CSS Grid, and custom animations.</li>
+                            <li><strong>JavaScript (ES6+):</strong> DOM manipulation, asynchronous programming, and API integration.</li>
+                            <li><strong>React:</strong> Component-based architecture and state management.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span><i class="fa-solid fa-gears icon"></i> Back-End Development</span>
+                        <i class="fa-solid fa-chevron-down arrow"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Crafting secure, scalable server-side logic, custom RESTful APIs, and application architecture.</p>
+                        <ul>
+                            <li><strong>PHP:</strong> Object-Oriented programming and custom backend logic.</li>
+                            <li><strong>Laravel:</strong> MVC framework architecture, Eloquent ORM, and secure authentication pipelines.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span><i class="fa-solid fa-database icon"></i> Database Management</span>
+                        <i class="fa-solid fa-chevron-down arrow"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Designing, optimizing, and managing relational database schemas for high performance and data integrity.</p>
+                        <ul>
+                            <li><strong>MySQL:</strong> Relational design, query optimization, and indexing.</li>
+                            <li><strong>PostgreSQL:</strong> Advanced data types, complex joins, and structured data storage.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span><i class="fa-solid fa-cloud icon"></i> DevOps & Cloud Infrastructure</span>
+                        <i class="fa-solid fa-chevron-down arrow"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Automating deployment pipelines and hosting scalable web applications on cloud environments.</p>
+                        <ul>
+                            <li><strong>DevOps:</strong> Version control (Git/GitHub), CI/CD concepts, and environment configuration.</li>
+                            <li><strong>Cloud Services:</strong> Application deployment, hosting management, and server maintenance.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span><i class="fa-solid fa-screwdriver-wrench icon"></i> Hardware, Software & Sales</span>
+                        <i class="fa-solid fa-chevron-down arrow"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Providing end-to-end technical support, hardware lifecycle management, and enterprise software provisioning.</p>
+                        <ul>
+                            <li><strong>Hardware Maintenance:</strong> System diagnostics, component upgrades (RAM, SSD installation), and physical hardware repairs.</li>
+                            <li><strong>Software Provisioning:</strong> OS installation (Windows/Linux), corporate software deployment, and system optimization.</li>
+                            <li><strong>Tech Sales & Consultancy:</strong> Sourcing and recommending commercial tech hardware and custom software licensing solutions.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
+
+    <section id="projects" class="projects-section container">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+
+            <div class="project-card highlight-card">
+                <div class="project-icon"><i class="fa-solid fa-robot"></i></div>
+                <h3>VEX IQ Autonomous Caterpillar Robot</h3>
+                <span class="tag">Robotics / Python</span>
+                <p>Designed, assembled, and programmed a heavy-duty caterpillar-tracked robot for tournament deployment. Developed customized Python scripts for high-precision motor synchronization handling a complex dual-motor lift and claw subsystem for precise object manipulation and scoring during autonomous tournament phases.</p>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon"><i class="fa-solid fa-vault"></i></div>
+                <h3>Found It Vault Application</h3>
+                <span class="tag">Laravel / PostgreSQL</span>
+                <p>A web-based platform designed to securely report and locate lost personal documents. Built featuring custom relational database schemas, secure authentication mechanisms, and an optimized search filter system.</p>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon"><i class="fa-solid fa-school"></i></div>
+                <h3>School Administration System</h3>
+                <span class="tag">PHP / MySQL / JS</span>
+                <p>Developed a full-featured management system for educational institutions. Designed robust database models to handle student registration, dynamic fee tracking modules, and automated academic report generation.</p>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                <h3>E-Commerce & Service Platform</h3>
+                <span class="tag">React / Node.js</span>
+                <p>An optimized digital storefront showcasing technology sales, software deployment pipelines, and premium hardware upgrade bookings. Features interactive booking states and seamless API integrations.</p>
+            </div>
+
+            <!-- Project 4: Tech Sales & Upgrades Portal -->
+            <div class="project-card">
+                <div class="project-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                <h3>E-Commerce & IT Service Platform</h3>
+                <span class="tag">React / Node.js</span>
+                <p>An optimized digital storefront showcasing technology sales, software deployment pipelines, and premium hardware upgrade bookings. Features interactive booking states and seamless API integrations.</p>
+            </div>
+
+            <!-- Project 5: Enterprise Network Dashboard -->
+            <div class="project-card">
+                <div class="project-icon"><i class="fa-solid fa-network-wired"></i></div>
+                <h3>Network & Server Monitor</h3>
+                <span class="tag">DevOps / Linux</span>
+                <p>An internal lightweight infrastructure monitor built to track uptime across virtualized operating system platforms. Sends instantaneous system logs via custom hooks during hardware degradation cycles.</p>
+            </div>
+
+        </div>
+    </section>
+
+        </div>
+
+
+        <!-- Contact Section with Live WhatsApp Routing Form -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Let's Collaborate</h2>
+            <p class="subtitle text-center" style="color: #cbd5e1;">Fill out this form to message me instantly on WhatsApp!</p>
+            
+            <div class="contact-wrapper">
+                <!-- Contact info details -->
+                <div class="contact-info-box">
+                    <h3>Contact Details</h3>
+                    <p>Have an application that needs building or corporate computers that need servicing? Drop a line.</p>
+                    <div class="info-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>costanicassatsa5@gmail.com</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Douala, Cameroon</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-brands fa-whatsapp-square" style="color: #25d366; font-size: 24px;"></i>
+                        <span>Instant WhatsApp Dispatch</span>
+                    </div>
+                </div>
+
+                <!-- Live WhatsApp Form -->
+                <form id="whatsappForm" class="contact-form">
+                    <div class="form-group">
+                        <label for="clientName">Your Name</label>
+                        <input type="text" id="clientName" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="projectType">Service Needed</label>
+                        <select id="projectType" required>
+                            <option value="" disabled selected>Select an option...</option>
+                            <option value="Web Development (Full-Stack)">Web Development (Full-Stack)</option>
+                            <option value="Database / DevOps Infrastructure">Database / DevOps Infrastructure</option>
+                            <option value="Hardware Maintenance / Upgrades">Hardware Maintenance / Upgrades</option>
+                            <option value="Custom Robotics / Automation">Custom Robotics / Automation</option>
+                            <option value="Other Project / Consultation">Other Project / Consultation</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="clientMessage">Message Detail</label>
+                        <textarea id="clientMessage" rows="4" placeholder="Briefly write what you need..." required></textarea>
+                    </div>
+                    <button type="submit" class="whatsapp-btn">
+                        <i class="fa-brands fa-whatsapp"></i> Send to WhatsApp
+                    </button>
+                </form>
+                
+            </div>
+        </div>
+    </section>
+   
+    
+    <footer>
+        <p>&copy; 2026 COSTECH IT Solution. All Rights Reserved.</p>
+    </footer>
 
     <script src="script.js"></script>
+    <script>
+    document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Configuration
+        const phoneNumber = "237656746171"; // Change this!
+        
+        // Get form values
+        const name = document.getElementById('clientName').value;
+        const service = document.getElementById('projectType').value;
+        const message = document.getElementById('clientMessage').value;
+
+        // Construct the message
+        const text = `*New Inquiry via Website*%0A%0A` +
+                     `*Name:* ${name}%0A` +
+                     `*Service:* ${service}%0A` +
+                     `*Message:* ${message}`;
+
+        // Create the URL
+        const whatsappUrl = `https://wa.me/${237656746172}?text=${text}`;
+
+        // Redirect to WhatsApp
+        window.open(whatsappUrl, '_blank');
+    });
+</script>
 </body>
 </html>
