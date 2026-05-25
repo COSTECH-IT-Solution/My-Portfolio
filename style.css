@@ -1,69 +1,453 @@
-/* General Reset */
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+/* --- Base Reset & Typography --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-body { background: #0f172a; color: white; scroll-behavior: smooth; }
+:root {
+    --primary-color: #2563eb; /* Clean tech blue */
+    --accent-color: #0ea5e9;  /* Vibrant sky blue */
+    --dark-bg: #0f172a;      /* Deep slate dark background */
+    --light-bg: #f8fafc;     /* Clean light grey background */
+    --text-dark: #1e293b;
+    --text-light: #64748b;
+    --white: #ffffff;
+    --transition: all 0.3s ease-in-out;
+}
 
-/* Navbar */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* --- Header / Navbar --- */
+header {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5%;
-    background: rgba(15, 23, 42, 0.9);
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
+    padding: 20px;
 }
 
-.nav-links { display: flex; list-style: none; align-items: center; gap: 20px; }
-.nav-links a { color: white; text-decoration: none; font-weight: 500; }
-
-.cv-btn {
-    background: #38bdf8;
-    color: #0f172a !important;
-    padding: 8px 16px;
-    border-radius: 5px;
-    font-weight: bold;
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--dark-bg);
 }
 
-/* Hero Section with Tech Background */
-.hero {
-    height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1920');
-    background-size: cover;
-    background-position: center;
+.logo span {
+    color: var(--primary-color);
+}
+
+.nav-links {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Hero Section --- */
+.hero {
+    background: linear-gradient(135deg, var(--dark-bg) 0%, #1e293b 100%);
+    color: var(--white);
+    padding: 160px 0 100px 0;
     text-align: center;
 }
 
-.hero h1 { font-size: 3.5rem; margin-bottom: 10px; }
-
-/* Responsive Project Grid */
-.projects { padding: 80px 5%; }
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+.hero-content h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
 }
-h2{
- position:center;
 
+.hero-content .highlight {
+    color: var(--accent-color);
+}
 
+.hero-content p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    color: #cbd5e1;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* --- Sections Common Layout --- */
+section {
+    padding: 80px 0;
+}
+
+h2 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    color: var(--dark-bg);
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+
+.subtitle {
+    text-align: center;
+    color: var(--text-light);
+    margin-top: -30px;
+    margin-bottom: 40px;
+}
+
+/* --- About --- */
+.about p {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 18px;
+    color: var(--text-dark);
+}
+
+/* --- Accordion Dropdowns (Competences) --- */
+.skills-section {
+    background-color: var(--white);
+}
+
+.accordion-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    background-color: var(--light-bg);
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+}
+
+.accordion-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--light-bg);
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--dark-bg);
+    cursor: pointer;
+    text-align: left;
+    transition: var(--transition);
+}
+
+.accordion-header:hover {
+    background-color: #f1f5f9;
+}
+
+.accordion-header .icon {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+.accordion-header .arrow {
+    transition: transform 0.3s ease;
+    color: var(--text-light);
+}
+
+/* Open State styles triggered by JS */
+.accordion-item.active .accordion-header {
+    background-color: #e2e8f0;
+}
+
+.accordion-item.active .arrow {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 20px;
+    background-color: var(--white);
+}
+
+.accordion-content p {
+    padding-top: 15px;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.accordion-content ul {
+    list-style-type: none;
+    padding: 15px 0 20px 10px;
+}
+
+.accordion-content li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+    color: var(--text-light);
+}
+
+.accordion-content li::before {
+    content: "➔";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+/* --- Projects Section --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 100px));
+    gap: 30px;
+    justify-content: center;
 }
 
 .project-card {
-    background: #1e293b;
-    padding: 40px;
-    border-radius: 10px;
-    border: 1px solid #334155;
-    text-align: center;
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #e2e8f0;
+    transition: var(--transition);
 }
 
-/* Mobile Responsive */
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Highlight style for VEX IQ */
+.highlight-card {
+    border: 2px solid var(--accent-color);
+    background: linear-gradient(to bottom right, var(--white), #f0f9ff);
+}
+
+.project-icon {
+    font-size: 40px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.project-card h3 {
+    margin-bottom: 10px;
+    color: var(--dark-bg);
+}
+
+.tag {
+    display: inline-block;
+    background-color: #e0f2fe;
+    color: #0369a1;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 50px;
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    color: var(--text-light);
+    font-size: 15px;
+}
+
+/* --- Contact & WhatsApp Form Layout --- */
+.contact-section {
+    background-color: var(--dark-bg);
+    color: var(--white);
+}
+
+.contact-section h2 {
+    color: var(--white);
+}
+
+.contact-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 30px;
+    align-items: flex-start;
+}
+
+.contact-info-box, .contact-form {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-info-box h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: var(--accent-color);
+}
+
+.contact-info-box p {
+    color: #cbd5e1;
+    margin-bottom: 25px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.info-item i {
+    color: var(--accent-color);
+    font-size: 20px;
+    width: 25px;
+}
+
+/* Form Styles */
+.contact-form {
+    background-color: #1e293b;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #cbd5e1;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #475569;
+    background-color: #0f172a;
+    color: var(--white);
+    font-size: 15px;
+    outline: none;
+    transition: var(--transition);
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px rgba(14, 165, 233, 0.4);
+}
+
+.form-group select option {
+    background-color: #1e293b;
+}
+
+/* WhatsApp Theme CTA Button */
+.whatsapp-btn {
+    width: 100%;
+    background-color: #25d366; /* Official WhatsApp green */
+    color: var(--white);
+    border: none;
+    padding: 14px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: var(--transition);
+}
+
+.whatsapp-btn:hover {
+    background-color: #128c7e;
+    transform: translateY(-2px);
+}
+
+
+/* --- Footer --- */
+footer {
+    background-color: #020617;
+    color: #94a3b8;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
+
+/* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
-    .nav-links { display: none; } /* Add JS toggle for mobile */
-    .hero h1 { font-size: 2.5rem; }
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-links li {
+        margin: 0 10px;
+    }
+    .hero-content h1 {
+        font-size: 32px;
+    }
+    section {
+        padding: 60px 0;
+    }
 }
