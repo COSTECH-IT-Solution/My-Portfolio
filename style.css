@@ -118,7 +118,22 @@ header {
     font-weight: 600;
     transition: var(--transition);
 }
+.bn{
+    background-color:#25d366;
+    display: inline-block;
+    color: var(--white);
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
 
+}
+.bn:hover{
+     background-color: #0bd656;
+    transform: translateY(-2px);
+
+}
 .btn:hover {
     background-color: var(--accent-color);
     transform: translateY(-2px);
