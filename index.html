@@ -202,34 +202,38 @@
                 </div>
 
                 <!-- Live WhatsApp Form -->
-                <form id="whatsappForm" class="contact-form">
-                    <div class="form-group">
-                        <label for="clientName">Your Name</label>
-                        <input type="text" id="clientName" placeholder="Enter your name" required>
+ <form id="whatsappForm" class="contact-form">
+    <div class="form-group">
+        <label for="clientName"> Name</label>
+        <input type="text" id="clientName" name="clientName" placeholder="Enter your name" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="clientEmail">Your Email</label>
+        <input type="email" id="clientEmail" name="clientEmail" placeholder="yourname@gmail.com" required>
+    </div>
 
-                        <label for="clientEmail">Your Email</label>
-                        <input type="email" id="clientEmail" placeholder="@gmail.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="projectType">Service Needed</label>
-                        <select id="projectType" required>
-                            <option value="" disabled selected>Select an option...</option>
-                            <option value="Web Development (Full-Stack)">Web Development (Full-Stack)</option>
-                            <option value="Database / DevOps Infrastructure">Database / DevOps Infrastructure</option>
-                            <option value="Hardware Maintenance / Upgrades">Hardware Maintenance / Upgrades</option>
-                            <option value="Custom Robotics / Automation">Custom Robotics / Automation</option>
-                            <option value="Other Project / Consultation">Other Project / Consultation</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="clientMessage">Message Detail</label>
-                        <textarea id="clientMessage" rows="4" placeholder="Briefly write what you need..." required></textarea>
-                    </div>
-                    <button type="submit" class="whatsapp-btn">
-                        <i class="fa-brands fa-whatsapp"></i> Send to WhatsApp
-                    </button>
-                </form>
-                
+    <div class="form-group">
+        <label for="projectType">Service Needed</label>
+        <select id="projectType" name="projectType" required>
+            <option value="" disabled selected>Select an option...</option>
+            <option value="Web Development (Full-Stack)">Web Development (Full-Stack)</option>
+            <option value="Database / DevOps Infrastructure">Database / DevOps Infrastructure</option>
+            <option value="Hardware Maintenance / Upgrades">Hardware Maintenance / Upgrades</option>
+            <option value="Custom Robotics / Automation">Custom Robotics / Automation</option>
+            <option value="Other Project / Consultation">Other Project / Consultation</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="clientMessage">Message Detail</label>
+        <textarea id="clientMessage" name="clientMessage" rows="4" placeholder="Briefly write what you need..." required></textarea>
+    </div>
+
+    <button type="submit" class="whatsapp-btn">
+        <i class="fa-brands fa-whatsapp"></i> Send to WhatsApp
+    </button>
+</form>
             </div>
         </div>
     </section>
