@@ -6,12 +6,42 @@
     <title>Tech Portfolio | Web Dev & IT Specialist</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366; /* Match your WhatsApp color theme, or use your primary color */
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            background-color: #1cbd55;
+            color: white;
+        }
+    </style>
 </head>
-<body>
+<body id="top">
 
     <header>
         <div class="navbar container">
-            <div class="logo">COSTECH  <span>IT Solution</span></div>
+            <div class="logo">COSTECH <span>IT Solution</span></div>
             <nav>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
@@ -154,7 +184,6 @@
                 <p>An optimized digital storefront showcasing technology sales, software deployment pipelines, and premium hardware upgrade bookings. Features interactive booking states and seamless API integrations.</p>
             </div>
 
-            <!-- Project 4: Tech Sales & Upgrades Portal -->
             <div class="project-card">
                 <div class="project-icon"><i class="fa-solid fa-laptop-code"></i></div>
                 <h3>E-Commerce & IT Service Platform</h3>
@@ -162,7 +191,6 @@
                 <p>An optimized digital storefront showcasing technology sales, software deployment pipelines, and premium hardware upgrade bookings. Features interactive booking states and seamless API integrations.</p>
             </div>
 
-            <!-- Project 5: Enterprise Network Dashboard -->
             <div class="project-card">
                 <div class="project-icon"><i class="fa-solid fa-network-wired"></i></div>
                 <h3>Network & Server Monitor</h3>
@@ -173,17 +201,12 @@
         </div>
     </section>
 
-        </div>
-
-
-        <!-- Contact Section with Live WhatsApp Routing Form -->
     <section id="contact" class="contact-section">
         <div class="container">
             <h2>Let's Collaborate</h2>
             <p class="subtitle text-center" style="color: #cbd5e1;">Fill out this form to message me instantly on WhatsApp!</p>
             
             <div class="contact-wrapper">
-                <!-- Contact info details -->
                 <div class="contact-info-box">
                     <h3>Contact Details</h3>
                     <p>Have an application that needs building or corporate computers that need servicing? Drop a line.</p>
@@ -196,86 +219,79 @@
                         <span>Douala, Cameroon</span>
                     </div>
                     <div class="info-item">
-                        <i class="fa-brands fa-whatsapp-square" style="color: #25d366; font-size: 24px;"></i>
+                        <i class="fa-solid fa-brands fa-whatsapp-square" style="color: #25d366; font-size: 24px;"></i>
                         <span>Instant WhatsApp Dispatch</span>
                     </div>
                 </div>
 
-                <!-- Live WhatsApp Form -->
- <form id="whatsappForm" class="contact-form">
-    <div class="form-group">
-        <label for="clientName"> Name</label>
-        <input type="text" id="clientName" name="clientName" placeholder="Enter your name" required>
-    </div>
-    
-    <div class="form-group">
-        <label for="clientEmail">Your Email</label>
-        <input type="email" id="clientEmail" name="clientEmail" placeholder="yourname@gmail.com" required>
-    </div>
+                <form id="whatsappForm" class="contact-form">
+                    <div class="form-group">
+                        <label for="clientName"> Name</label>
+                        <input type="text" id="clientName" name="clientName" placeholder="Enter your name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="clientEmail">Your Email</label>
+                        <input type="email" id="clientEmail" name="clientEmail" placeholder="yourname@gmail.com" required>
+                    </div>
 
-    <div class="form-group">
-        <label for="projectType">Service Needed</label>
-        <select id="projectType" name="projectType" required>
-            <option value="" disabled selected>Select an option...</option>
-            <option value="Web Development (Full-Stack)">Web Development (Full-Stack)</option>
-            <option value="Database / DevOps Infrastructure">Database / DevOps Infrastructure</option>
-            <option value="Hardware Maintenance / Upgrades">Hardware Maintenance / Upgrades</option>
-            <option value="Custom Robotics / Automation">Custom Robotics / Automation</option>
-            <option value="Other Project / Consultation">Other Project / Consultation</option>
-        </select>
-    </div>
+                    <div class="form-group">
+                        <label for="projectType">Service Needed</label>
+                        <select id="projectType" name="projectType" required>
+                            <option value="" disabled selected>Select an option...</option>
+                            <option value="Web Development (Full-Stack)">Web Development (Full-Stack)</option>
+                            <option value="Database / DevOps Infrastructure">Database / DevOps Infrastructure</option>
+                            <option value="Hardware Maintenance / Upgrades">Hardware Maintenance / Upgrades</option>
+                            <option value="Custom Robotics / Automation">Custom Robotics / Automation</option>
+                            <option value="Other Project / Consultation">Other Project / Consultation</option>
+                        </select>
+                    </div>
 
-    <div class="form-group">
-        <label for="clientMessage">Message Detail</label>
-        <textarea id="clientMessage" name="clientMessage" rows="4" placeholder="Briefly write what you need..." required></textarea>
-    </div>
+                    <div class="form-group">
+                        <label for="clientMessage">Message Detail</label>
+                        <textarea id="clientMessage" name="clientMessage" rows="4" placeholder="Briefly write what you need..." required></textarea>
+                    </div>
 
-    <button type="submit" class="whatsapp-btn">
-        <i class="fa-brands fa-whatsapp"></i> Send to WhatsApp
-    </button>
-</form>
+                    <button type="submit" class="whatsapp-btn">
+                        <i class="fa-brands fa-whatsapp"></i> Send to WhatsApp
+                    </button>
+                </form>
             </div>
         </div>
     </section>
-   
     
     <footer>
         <p>&copy; 2026 COSTECH IT Solution. All Rights Reserved.</p>
     </footer>
 
-
+    <a href="#top" class="back-to-top" title="Go to top">
+        <i class="fa-solid fa-chevron-up"></i>
+    </a>
 
     <script>
-document.getElementById('whatsappForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+    document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+        e.preventDefault();
 
-    // 1. Configuration (Make sure this matches your actual phone number!)
-    const phoneNumber = "237656746172"; 
-    
-    // 2. Get form values
-    const name = document.getElementById('clientName').value;
-    const email = document.getElementById('clientEmail').value;
-    const service = document.getElementById('projectType').value;
-    const message = document.getElementById('clientMessage').value;
+        const phoneNumber = "237656746172"; 
+        
+        const name = document.getElementById('clientName').value;
+        const email = document.getElementById('clientEmail').value;
+        const service = document.getElementById('projectType').value;
+        const message = document.getElementById('clientMessage').value;
 
-    // 3. Construct the plain text message with standard line breaks
-    const plainText = `*New Inquiry via Website*\n\n` +
-                      `*Name:* ${name}\n` +
-                      `*Email:* ${email}\n` +
-                      `*Service:* ${service}\n` +
-                      `*Message:* ${message}`;
+        const plainText = `*New Inquiry via Website*\n\n` +
+                          `*Name:* ${name}\n` +
+                          `*Email:* ${email}\n` +
+                          `*Service:* ${service}\n` +
+                          `*Message:* ${message}`;
 
-    // 4. Safely encode the entire text block for the URL
-    const encodedText = encodeURIComponent(plainText);
+        const encodedText = encodeURIComponent(plainText);
 
-    // 5. Create the URL using your phoneNumber variable
-    const whatsappUrl = `https://wa.me/${237656746172}?text=${encodedText}`;
+        // Note: Cleaned up the variable fallback execution line here from the previous copy
+        const whatsappUrl = `https://wa.me/${237656746172}?text=${encodedText}`;
 
-    // 6. Redirect to WhatsApp
-    window.open(whatsappUrl, '_blank');
-});
-</script>
-
-
+        window.open(whatsappUrl, '_blank');
+    });
+    </script>
 </body>
 </html>
