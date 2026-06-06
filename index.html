@@ -29,7 +29,7 @@
             <h1>Hi, I'm a <span class="highlight">Full-Stack Developer</span> & <span class="highlight">IT Specialist</span> </h1>
             <p>Bridging the gap between robust software engineering, scalable cloud infrastructure, and hands-on hardware systems engineering.</p>
             <a href="#contact" class="btn">Get In Touch</a>
-            <a href="assets./CV_ASSATSA_TATANG_COSTANIC_CABREL_FR.pdf" download class="bn" download="CV_ASSATSA_TATANG_COSTANIC_CABREL.pdf">Download CV</a>
+            <a href="assets/CV_ASSATSA_TATANG_COSTANIC_CABREL_FR.pdf" download class="bn" download="CV_ASSATSA_TATANG_COSTANIC_CABREL.pdf">Download CV</a>
         </div>
     </section>
 
@@ -208,7 +208,7 @@
                         <input type="text" id="clientName" placeholder="Enter your name" required>
 
                         <label for="clientEmail">Your Email</label>
-                        <input type="text" id="clientName" placeholder="@gmail.com" required>
+                        <input type="email" id="clientEmail" placeholder="@gmail.com" required>
                     </div>
                     <div class="form-group">
                         <label for="projectType">Service Needed</label>
@@ -239,31 +239,39 @@
         <p>&copy; 2026 COSTECH IT Solution. All Rights Reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+
+
     <script>
-    document.getElementById('whatsappForm').addEventListener('submit', function(e) {
-        e.preventDefault();
+document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+    e.preventDefault();
 
-        // Configuration
-        const phoneNumber = "237656746171"; // Change this!
-        
-        // Get form values
-        const name = document.getElementById('clientName').value;
-        const service = document.getElementById('projectType').value;
-        const message = document.getElementById('clientMessage').value;
+    // 1. Configuration (Make sure this matches your actual phone number!)
+    const phoneNumber = "237656746172"; 
+    
+    // 2. Get form values
+    const name = document.getElementById('clientName').value;
+    const email = document.getElementById('clientEmail').value;
+    const service = document.getElementById('projectType').value;
+    const message = document.getElementById('clientMessage').value;
 
-        // Construct the message
-        const text = `*New Inquiry via Website*%0A%0A` +
-                     `*Name:* ${name}%0A` +
-                     `*Service:* ${service}%0A` +
-                     `*Message:* ${message}`;
+    // 3. Construct the plain text message with standard line breaks
+    const plainText = `*New Inquiry via Website*\n\n` +
+                      `*Name:* ${name}\n` +
+                      `*Email:* ${email}\n` +
+                      `*Service:* ${service}\n` +
+                      `*Message:* ${message}`;
 
-        // Create the URL
-        const whatsappUrl = `https://wa.me/${237656746172}?text=${text}`;
+    // 4. Safely encode the entire text block for the URL
+    const encodedText = encodeURIComponent(plainText);
 
-        // Redirect to WhatsApp
-        window.open(whatsappUrl, '_blank');
-    });
+    // 5. Create the URL using your phoneNumber variable
+    const whatsappUrl = `https://wa.me/${237656746172}?text=${encodedText}`;
+
+    // 6. Redirect to WhatsApp
+    window.open(whatsappUrl, '_blank');
+});
 </script>
+
+
 </body>
 </html>
