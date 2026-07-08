@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Portfolio | Web Dev & IT Specialist</title>
+    <meta name="description" content="Portfolio of a Full-Stack Developer & IT Specialist in Douala. Expert in Web Development, DevOps, Cloud Infrastructure, and Hardware Systems Engineering.">
+    <meta name="keywords" content="Full-Stack Developer Douala, IT Specialist Cameroon, Web Development, DevOps, Robotics, Hardware Maintenance, Costech IT Solution">
+    <meta name="author" content="Assatsa Tatang Costanic Cabrel">
+    <title>Tech Portfolio | Full-Stack Dev & IT Specialist | COSTECH</title>
+    
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <style>
         html {
             scroll-behavior: smooth;
@@ -59,7 +63,9 @@
             <h1>Hi, I'm a <span class="highlight">Full-Stack Developer</span> & <span class="highlight">IT Specialist</span> </h1>
             <p>Bridging the gap between robust software engineering, scalable cloud infrastructure, and hands-on hardware systems engineering.</p>
             <a href="#contact" class="btn">Get In Touch</a>
-            <a href="assets/CV_ASSATSA_TATANG_COSTANIC_CABREL_FR.pdf" download class="bn" download="CV_ASSATSA_TATANG_COSTANIC_CABREL.pdf">Download CV</a>
+            
+            
+            <a href="assets./CV_ASSATSA_TATANG_COSTANIC_CABREL_FR.pdf" download class="bn" download="CV_ASSATSA_TATANG_COSTANIC_CABREL.pdf">Download CV</a>
         </div>
     </section>
 
@@ -157,45 +163,45 @@
         <div class="projects-grid">
 
             <div class="project-card highlight-card">
+                <div class="project-icon"><i class="fa-solid fa-briefcase"></i></div>
+                <h3>COSTECH IT Solution</h3>
+                <span class="tag">Maintenance / Web Development</span>
+                <p>Plateforme dédiée aux entreprises pour la gestion de leur parc informatique. Services incluant la maintenance préventive/curative, l'optimisation des systèmes et le développement de solutions web sur mesure pour la digitalisation des processus métier.</p>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon"><i class="fa-solid fa-people-group"></i></div>
+                <h3>Djangui Go</h3>
+                <span class="tag">FinTech / Web App</span>
+                <p>Application de gestion digitale des tontines (Djangui). Solution permettant de suivre les cotisations, les tours de table, et les transactions de manière sécurisée et transparente pour les membres de groupes d'épargne.</p>
+            </div>
+
+            <div class="project-card">
                 <div class="project-icon"><i class="fa-solid fa-robot"></i></div>
-                <h3>VEX IQ Autonomous Caterpillar Robot</h3>
+                <h3>VEX IQ Autonomous Robot</h3>
                 <span class="tag">Robotics / Python</span>
-                <p>Designed, assembled, and programmed a heavy-duty caterpillar-tracked robot for tournament deployment. Developed customized Python scripts for high-precision motor synchronization handling a complex dual-motor lift and claw subsystem for precise object manipulation and scoring during autonomous tournament phases.</p>
+                <p>Conception et programmation d'un robot autonome pour compétitions. Utilisation de scripts Python pour la synchronisation des moteurs et la gestion précise des sous-systèmes de manipulation.</p>
             </div>
 
             <div class="project-card">
                 <div class="project-icon"><i class="fa-solid fa-vault"></i></div>
                 <h3>DocRescue Application</h3>
                 <span class="tag">Laravel / PostgreSQL</span>
-                <p>A web-based platform designed to securely report and locate lost personal documents. Built featuring custom relational database schemas, secure authentication mechanisms, and an optimized search filter system.</p>
+                <p>Plateforme sécurisée pour le signalement et la localisation de documents perdus, incluant une gestion avancée des données et un système de recherche optimisé.</p>
             </div>
 
             <div class="project-card">
                 <div class="project-icon"><i class="fa-solid fa-school"></i></div>
                 <h3>School Administration System</h3>
-                <span class="tag">PHP / MySQL / JS</span>
-                <p>Developed a full-featured management system for educational institutions. Designed robust database models to handle student registration, dynamic fee tracking modules, and automated academic report generation.</p>
-            </div>
-
-            <div class="project-card">
-                <div class="project-icon"><i class="fa-solid fa-laptop-code"></i></div>
-                <h3>E-Commerce & Service Platform</h3>
-                <span class="tag">React / Node.js</span>
-                <p>An optimized digital storefront showcasing technology sales, software deployment pipelines, and premium hardware upgrade bookings. Features interactive booking states and seamless API integrations.</p>
-            </div>
-
-            <div class="project-card">
-                <div class="project-icon"><i class="fa-solid fa-laptop-code"></i></div>
-                <h3>E-Commerce & IT Service Platform</h3>
-                <span class="tag">React / Node.js</span>
-                <p>An optimized digital storefront showcasing technology sales, software deployment pipelines, and premium hardware upgrade bookings. Features interactive booking states and seamless API integrations.</p>
+                <span class="tag">PHP / MySQL</span>
+                <p>Système complet de gestion scolaire : inscriptions, suivi des frais de scolarité, et génération automatique de bulletins académiques pour les institutions.</p>
             </div>
 
             <div class="project-card">
                 <div class="project-icon"><i class="fa-solid fa-network-wired"></i></div>
                 <h3>Network & Server Monitor</h3>
                 <span class="tag">DevOps / Linux</span>
-                <p>An internal lightweight infrastructure monitor built to track uptime across virtualized operating system platforms. Sends instantaneous system logs via custom hooks during hardware degradation cycles.</p>
+                <p>Outil interne de monitoring d'infrastructure pour le suivi de l'uptime et des alertes système en cas de dégradation matérielle.</p>
             </div>
 
         </div>
@@ -269,6 +275,29 @@
     </a>
 
     <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const accordionHeaders = document.querySelectorAll(".accordion-header");
+
+    accordionHeaders.forEach(header => {
+        header.addEventListener("click", function() {
+            const item = this.parentElement;
+            const content = this.nextElementSibling;
+            const isActive = item.classList.contains("active");
+
+            // Close all other items
+            document.querySelectorAll(".accordion-item").forEach(el => {
+                el.classList.remove("active");
+                el.querySelector(".accordion-content").style.maxHeight = null;
+            });
+
+            // Open clicked item if it was closed
+            if (!isActive) {
+                item.classList.add("active");
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+    });
+});
     document.getElementById('whatsappForm').addEventListener('submit', function(e) {
         e.preventDefault();
 
