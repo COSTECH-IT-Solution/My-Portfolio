@@ -20,7 +20,7 @@
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background-color: #25d366; /* Match your WhatsApp color theme, or use your primary color */
+            background-color: #25d366;
             color: white;
             width: 50px;
             height: 50px;
@@ -62,10 +62,12 @@
         <div class="container hero-content">
             <h1>Hi, I'm a <span class="highlight">Full-Stack Developer</span> & <span class="highlight">IT Specialist</span> </h1>
             <p>Bridging the gap between robust software engineering, scalable cloud infrastructure, and hands-on hardware systems engineering.</p>
-            <a href="#contact" class="btn">Get In Touch</a>
+            <a href="#contact" class="btn"><i class="fa-solid fa-phone"></i> Get In Touch</a>
             
-            
-            <a href="assets./CV_ASSATSA_TATANG_COSTANIC_CABREL_FR.pdf" download class="bn" download="CV_ASSATSA_TATANG_COSTANIC_CABREL.pdf">Download CV</a>
+            <!-- FIXED PDF DOWNLOAD LINK -->
+            <a href="CV_ASSATSA_TATANG_COSTANIC_CABREL_FR.pdf" download="CV_ASSATSA_TATANG_COSTANIC_CABREL.pdf" class="btn" style="background-color: #25d366; margin-left: 10px;">
+                <i class="fa-solid fa-download"></i> Download CV
+            </a>
         </div>
     </section>
 
@@ -90,7 +92,6 @@
                         <p>Building responsive, accessible, and dynamic user interfaces using modern web standards.</p>
                         <ul>
                             <li><strong>HTML5 & CSS3:</strong> Semantic structure, Flexbox, CSS Grid, and custom animations.</li>
-                            <li><strong>JavaScript (ES6+):</strong> DOM manipulation, asynchronous programming, and API integration.</li>
                             <li><strong>JavaScript (ES6+):</strong> DOM manipulation, asynchronous programming, and API integration.</li>
                             <li><strong>React:</strong> Component-based architecture and state management.</li>
                         </ul>
@@ -167,13 +168,19 @@
                 <h3>COSTECH IT Solution</h3>
                 <span class="tag">Maintenance / Web Development</span>
                 <p>Plateforme dédiée aux entreprises pour la gestion de leur parc informatique. Services incluant la maintenance préventive/curative, l'optimisation des systèmes et le développement de solutions web sur mesure pour la digitalisation des processus métier.</p>
+                <br>
+                <a href="https://costech-it-support-58ti.vercel.app/" class="mon-lien">
+                    <b>🔗 COSTECH IT Solution</b>
+                </a>
             </div>
 
             <div class="project-card">
                 <div class="project-icon"><i class="fa-solid fa-people-group"></i></div>
-                <h3>Djangui Go</h3>
+                <h3>DjanguiGo</h3>
                 <span class="tag">FinTech / Web App</span>
                 <p>Application de gestion digitale des tontines (Djangui). Solution permettant de suivre les cotisations, les tours de table, et les transactions de manière sécurisée et transparente pour les membres de groupes d'épargne.</p>
+                <br>
+                <p><b>Link :</b> 🔗 https://github.com/COSTECH-IT-Solution/DjanguiGo</p> 
             </div>
 
             <div class="project-card">
@@ -188,6 +195,8 @@
                 <h3>DocRescue Application</h3>
                 <span class="tag">Laravel / PostgreSQL</span>
                 <p>Plateforme sécurisée pour le signalement et la localisation de documents perdus, incluant une gestion avancée des données et un système de recherche optimisé.</p>
+                <br>
+                <p><b>Link :</b> 🔗 https://github.com/COSTECH-IT-Solution/DocRescue</p> 
             </div>
 
             <div class="project-card">
@@ -232,7 +241,7 @@
 
                 <form id="whatsappForm" class="contact-form">
                     <div class="form-group">
-                        <label for="clientName"> Name</label>
+                        <label for="clientName">Name</label>
                         <input type="text" id="clientName" name="clientName" placeholder="Enter your name" required>
                     </div>
                     
@@ -276,51 +285,48 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-    const accordionHeaders = document.querySelectorAll(".accordion-header");
+            const accordionHeaders = document.querySelectorAll(".accordion-header");
 
-    accordionHeaders.forEach(header => {
-        header.addEventListener("click", function() {
-            const item = this.parentElement;
-            const content = this.nextElementSibling;
-            const isActive = item.classList.contains("active");
+            accordionHeaders.forEach(header => {
+                header.addEventListener("click", function() {
+                    const item = this.parentElement;
+                    const content = this.nextElementSibling;
+                    const isActive = item.classList.contains("active");
 
-            // Close all other items
-            document.querySelectorAll(".accordion-item").forEach(el => {
-                el.classList.remove("active");
-                el.querySelector(".accordion-content").style.maxHeight = null;
+                    document.querySelectorAll(".accordion-item").forEach(el => {
+                        el.classList.remove("active");
+                        el.querySelector(".accordion-content").style.maxHeight = null;
+                    });
+
+                    if (!isActive) {
+                        item.classList.add("active");
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                });
             });
-
-            // Open clicked item if it was closed
-            if (!isActive) {
-                item.classList.add("active");
-                content.style.maxHeight = content.scrollHeight + "px";
-            }
         });
-    });
-});
-    document.getElementById('whatsappForm').addEventListener('submit', function(e) {
-        e.preventDefault();
 
-        const phoneNumber = "237656746172"; 
-        
-        const name = document.getElementById('clientName').value;
-        const email = document.getElementById('clientEmail').value;
-        const service = document.getElementById('projectType').value;
-        const message = document.getElementById('clientMessage').value;
+        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+            e.preventDefault();
 
-        const plainText = `*New Inquiry via Website*\n\n` +
-                          `*Name:* ${name}\n` +
-                          `*Email:* ${email}\n` +
-                          `*Service:* ${service}\n` +
-                          `*Message:* ${message}`;
+            const phoneNumber = "237656746172"; 
+            
+            const name = document.getElementById('clientName').value;
+            const email = document.getElementById('clientEmail').value;
+            const service = document.getElementById('projectType').value;
+            const message = document.getElementById('clientMessage').value;
 
-        const encodedText = encodeURIComponent(plainText);
+            const plainText = `*New Inquiry via Website*\n\n` +
+                              `*Name:* ${name}\n` +
+                              `*Email:* ${email}\n` +
+                              `*Service:* ${service}\n` +
+                              `*Message:* ${message}`;
 
-        // Note: Cleaned up the variable fallback execution line here from the previous copy
-        const whatsappUrl = `https://wa.me/${237656746172}?text=${encodedText}`;
+            const encodedText = encodeURIComponent(plainText);
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedText}`;
 
-        window.open(whatsappUrl, '_blank');
-    });
+            window.open(whatsappUrl, '_blank');
+        });
     </script>
 </body>
 </html>
